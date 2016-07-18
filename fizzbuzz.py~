@@ -1,0 +1,15 @@
+#fizzbuzz.py
+#
+# classic programming problem
+# print between 1-10
+# if divisible by 3, print fizz
+# if divisible by 5, print buzz
+# if divisible by both, print fizzbuzz
+#
+for i in range(100):
+    div3=i/3.
+    div5=i/5.
+
+    if (div3 == int(i/3)) and (div5 == int(i/5)):
+        # then print fizz
+        print 
