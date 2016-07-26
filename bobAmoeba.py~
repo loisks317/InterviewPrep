@@ -1,0 +1,36 @@
+#
+# bobAmoeba.py
+#
+# Insight July, 2016
+#
+import numpy as np
+
+#
+#
+0off=0.25
+1off=0.25
+2off=0.5
+probs=[0.25, 0.25, 0.5, 0.5]
+n=1000
+cap = 1000
+population = 1
+deadCount=0
+AliveCount=0
+
+for ii in range(n):
+    population = 1
+    for jj in range(cap):
+        newpopulation=np.zeros(population)
+        choice=np.random.rand(population)
+        newpopulation[choice<=0.25]=1
+        newpopulation[choice>=0.5]=2
+        # don't need the zero population, already zero
+        population = np.sum(newpopulation)
+        if population == 0:
+            print 'Bob dies out!'
+            deadCount+=1
+            break
+    if population > 0:
+        aliveCount+=1
+
+print deadCount/(1.0*(deadCount+AliveCount))
